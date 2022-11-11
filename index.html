@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <script src="./books.js" defer></script>
+    <link rel="stylesheet" href="./styles.css"></link>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="content">
+        <!-- <form id="form" method="post"> -->
+        <form id="form">
+            <div id="bookTitle">
+                <label for="title">Title</label>
+                <input id="title" name="title" type="text">
+            </div>
+            <div id="bookAuthor">
+                <label for="author">Author</label>
+                <input name="author" type="text">
+            </div>
+            <div id="bookPages">
+                <label for="pages">Pages</label>
+                <input name="pages" type="number" min="1" step="1">
+            </div>
+            <div id="bookRead">
+                <label for="read">Read it?</label>
+                <span id="readY"><input name="read" type="radio" value="true"><label for="yep">Yep</label></span>
+                <span id="readN"><input name="read" type="radio" value="false"><label for="nope">Nope</label></span>
+            </div>
+            <button id="submit" type="submit">Submit</button>
+        </form>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>
