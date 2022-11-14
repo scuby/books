@@ -82,14 +82,21 @@ body {
     visibility: hidden;
 }
 
+.disabled {
+    
+}
+
 #form-wrapper {
     box-sizing: border-box;
 }
 
-#add-book {
-    width: 5rem;
+#task-buttons {
+    width: 100%;
     margin: 0;
     position: absolute;
-    top: 50%;
-    left: calc(50% - 2.5rem);
+    top: 90%;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    gap: 2rem;
 }

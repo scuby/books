@@ -6,7 +6,7 @@ const formSubmit = document.getElementById('submit');
 
 addBook.addEventListener('click', MouseEvent => {
 	formWrapper.setAttribute('class','');
-	addBook.setAttribute('class', 'hidden');
+	addBook.toggleAttribute('disabled', true);
 });
 
 form.addEventListener('submit', (e) => {
@@ -21,7 +21,6 @@ function addBookToLibrary(event){
 	console.log(myLibrary);
 	document.forms[0].reset();
 	formWrapper.setAttribute('class', 'hidden');
-	addBook.setAttribute('class', '');
-
+	addBook.toggleAttribute('disabled', false); 
 }
 
