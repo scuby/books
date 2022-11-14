@@ -1,26 +1,27 @@
-let myLibrary = {};
-const submitForm = document.getElementById('form');
+let myLibrary = [];
+const form = document.getElementById('form');
 const addBook = document.getElementById('add-book');
 const formWrapper = document.getElementById('form-wrapper');
+const formSubmit = document.getElementById('submit');
 
 addBook.addEventListener('click', MouseEvent => {
 	formWrapper.setAttribute('class','');
 	addBook.setAttribute('class', 'hidden');
 });
 
-function Book() {
-	this.title = title;
-	this.author = author;
-	this.pages = pages;
-	this.read = read;
-	this.info = function () {
-		return `${title} by ${author}, ${pages} pages, ${read}`;
-	}
-}
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
+	const formInput = new FormData(form);
+	const entries = Object.fromEntries(formInput);
+	addBookToLibrary(entries);
+})
 
 function addBookToLibrary(event){ 
-	const newBook = new Book();
-	console.log(newBook);
-	// newBook.title = event.title;
+	myLibrary.push(event);
+	console.log(myLibrary);
+	document.forms[0].reset();
+	formWrapper.setAttribute('class', 'hidden');
+	addBook.setAttribute('class', '');
+
 }
 
