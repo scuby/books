@@ -1,7 +1,11 @@
-let myLibrary = {'title'};
-const submitForm = document.getElementById('submit');
-submitForm.addEventListener('submit', (event) => {
-	addBookToLibrary(event);
+let myLibrary = {};
+const submitForm = document.getElementById('form');
+const addBook = document.getElementById('add-book');
+const formWrapper = document.getElementById('form-wrapper');
+
+addBook.addEventListener('click', MouseEvent => {
+	formWrapper.setAttribute('class','');
+	addBook.setAttribute('class', 'hidden');
 });
 
 function Book() {
@@ -15,13 +19,8 @@ function Book() {
 }
 
 function addBookToLibrary(event){ 
-	const newBook = new Book.prototype;
-	newBook.title = 
-	// console.log(event.title);
-	// console.log(event.author);
-	// console.log(event.pages);
-	// console.log(event.read);
-
-	// console.log(this.title);
+	const newBook = new Book();
+	console.log(newBook);
+	// newBook.title = event.title;
 }
 

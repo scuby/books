@@ -11,27 +11,30 @@
 <body>
     <div id="header"></div>
     <div id="content">
-        <!-- <form id="form" method="post"> -->
-        <form id="form">
-            <div id="bookTitle">
-                <label for="title">Title</label>
-                <input id="title" name="title" type="text">
-            </div>
-            <div id="bookAuthor">
-                <label for="author">Author</label>
-                <input name="author" type="text">
-            </div>
-            <div id="bookPages">
-                <label for="pages">Pages</label>
-                <input name="pages" type="number" min="1" step="1">
-            </div>
-            <div id="bookRead">
-                <label for="read">Read it?</label>
-                <span id="readY"><input name="read" type="radio" value="true"><label for="yep">Yep</label></span>
-                <span id="readN"><input name="read" type="radio" value="false"><label for="nope">Nope</label></span>
-            </div>
-            <button id="submit" type="submit">Submit</button>
-        </form>
+        <!-- FORM --- FORM --- FORM -->
+        <div id="form-wrapper" class="hidden">
+            <form id="form" method="post">
+                <div id="bookTitle">
+                    <label for="title">Title</label>
+                    <input id="title" name="title" type="text">
+                </div>
+                <div id="bookAuthor">
+                    <label for="author">Author</label>
+                    <input name="author" type="text">
+                </div>
+                <div id="bookPages">
+                    <label for="pages">Pages</label>
+                    <input name="pages" type="number" min="1" step="1">
+                </div>
+                <div id="bookRead">
+                    <label for="read">Read it?</label>
+                    <label for="yep">Yep</label><input name="read" type="radio" value="true">
+                    <input name="read" type="radio" value="false"><label for="nope">Nope</label>
+                </div>
+                <button id="submit" type="submit">Submit</button>
+            </form>
+        </div>
+        <button id="add-book">Add Book</button>
     </div>
     <div id="footer"></div>
 </body>
