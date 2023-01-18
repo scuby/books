@@ -6,7 +6,7 @@
     margin: 0;
     /* width: 100vw; */
     /* height: 100vh; */
-    background-color: rgba(68, 46, 17, 0.708);
+    background-color: rgba(21, 20, 20, 0.708);
 }
 
 body {
@@ -28,26 +28,26 @@ body {
 }
 
 #content {
-    background-color: antiquewhite;
+    background-color: white;
     grid-row: 2;
     height: 100%;
 }
 
 #form {
     display: grid;
-    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr;
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr;
     align-items: center;
     width: 33vw;
     height: 25rem;
-    /* padding: 1rem; */
+    padding: 1rem;
     background-color: white;
     box-sizing: border-box;
     margin: calc(100vh - 50rem) auto;
 }
 
-#form div input {
-    grid-column: 2 / 3;
+#form div:not(#bookRead) input {
     width: 100%;
+    height: 2rem;
 }
 
 #bookTitle {
@@ -68,6 +68,11 @@ body {
 
 #bookRead {
     grid-row-start: 4; 
+    grid-column-start: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 #submit {
