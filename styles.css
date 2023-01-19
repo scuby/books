@@ -31,7 +31,7 @@ body {
 #content {
     background-color: white;
     grid-row: 2;
-    height: 100%;
+    max-height: 80vh;
 }
 
 #form {
@@ -96,7 +96,11 @@ body {
 }
 
 #form-wrapper {
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
 }
 
 #task-buttons {
@@ -111,27 +115,44 @@ body {
 }
 
 #book-db {
-    display: flex;
+    display: grid;
+    grid-template: 20px 1fr 20px 1fr / 1fr;
     box-sizing: border-box;
     height: 100%;
     width: 50vw;
     /* flex-direction: column; */
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     margin: 2rem auto;
 }
 
-#book-db div {
-  width: 100%;
-  display: flex;
-  /* flex: 1 1 auto; */
-  justify-content: space-between;
-  align-items: center;
+#book-db-y,
+#book-db-n {
+    /* display: grid; */
+    overflow-y: auto;
+
+}
+
+#book-db > span {
+    grid-column: 1 / 4;
+    font-weight: 900;
+    text-align: center;
+}
+
+.book {
+    display: grid;
+    grid-template: 3rem / 1fr 8rem 3rem;
+    max-height: 3rem;
+    align-items: center;
 }
 
 .rm-book {
-    width: 50%;
-    align-items: flex-end;
-    justify-content: right;
+    text-align: center;
     font-size: 1.1rem;
+    grid-column-start: 3;
+}
+
+.book-pgs {
+    grid-column-start: 2;
+    color: lightslategray;
 }

@@ -3,15 +3,16 @@ var num = 0;
 const form = document.getElementById('form');
 const addBook = document.getElementById('add-book');
 const editBook = document.getElementById('edit-book');
-const rmBook = document.getElementById('rm-book');
 const formWrapper = document.getElementById('form-wrapper');
 const bookDB = document.getElementById('book-db');
+const bookDBy = document.getElementById('book-db-y');
+const bookDBn = document.getElementById('book-db-n');
 const formSubmit = document.getElementById('submit');
 
 addBook.addEventListener('click', (MouseEvent) => {
   formWrapper.setAttribute('class', '');
   addBook.toggleAttribute('disabled', true);
-  bookDB.toggleAttribute('disabled', true);
+  bookDB.setAttribute('class', 'hidden');
 });
 
 form.addEventListener('submit', (e) => {
@@ -31,12 +32,25 @@ function addBookToLibrary(event) {
 
   const bookEntry = document.createElement('div');
   bookEntry.className = 'book';
-  bookEntry.textContent = Object.values(event);
+  bookEntry.textContent = Object.values(event)[0];
+  bookEntry.textContent += ' by ' + Object.values(event)[1];
+  const bookEntryPages = document.createElement('div');
+  if ( Object.values(event)[2] > 0 ){
+    bookEntryPages.textContent = ' (' + Object.values(event)[2] + ' pages)';
+    bookEntryPages.className = 'book-pgs';
+  }
+  bookEntry.appendChild(bookEntryPages);
   const rmEntry = document.createElement('span');
   rmEntry.className = 'rm-book';
   rmEntry.textContent = 'X';
-  bookEntry.appendChild(rmEntry);
-  bookDB.appendChild(bookEntry);
+  if ( Object.values(event)[3] == 'true' ) {
+    bookEntry.appendChild(rmEntry);
+    bookDBy.appendChild(bookEntry);
+  } else {
+    bookEntry.appendChild(rmEntry);
+    bookDBn.appendChild(bookEntry);
+  }
+  bookDB.setAttribute('class', '');
 
   document.forms[0].reset();
 
@@ -48,16 +62,5 @@ function addBookToLibrary(event) {
 function enableTaskButtons(){
   formWrapper.setAttribute('class', 'hidden');
   bookDB.toggleAttribute('disabled', false);
-  editBook.toggleAttribute('disabled', false);
-  editBook.addEventListener('click', (MouseEvent) => {
-	// if edit book button clicked, add table of book database with additional options to modify entry
-	console.log('editBook button activated');
-  })
-
-  rmBook.toggleAttribute('disabled', false);
-  rmBook.addEventListener('click', (MouseEvent) => {
-	// if remove book button clicked, show book db with options to remove entries
-	console.log('rmBook button activated');
-  })
 }
 

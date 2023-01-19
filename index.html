@@ -14,7 +14,12 @@
 <body>
     <div id="header"></div>
     <div id="content">
-        <div id="book-db"></div>
+        <div id="book-db" class="hidden">
+            <span>READ</span>
+            <div id="book-db-y"></div>
+            <span>UNREAD</span>
+            <div id="book-db-n"></div>
+        </div>
         <!-- FORM -->
         <div id="form-wrapper" class="hidden">
             <form id="form" method="post">
@@ -41,8 +46,8 @@
         </div>
         <div id="task-buttons" class="task-buttons">
             <button id="add-book">Add Book</button>
-            <button id="edit-book" disabled>Edit Book</button>
-            <button id="rm-book" disabled>Remove Book</button>
+            <!-- <button id="edit-book" disabled>Edit Book</button> -->
+            <!-- <button id="rm-book" disabled>Remove Book</button> -->
         </div>
     </div>
     <div id="footer"></div>
