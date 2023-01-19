@@ -5,8 +5,9 @@
     font-family: 'Roboto', sans-serif;
     margin: 0;
     /* width: 100vw; */
-    /* height: 100vh; */
+    height: 100vh;
     background-color: rgba(21, 20, 20, 0.708);
+    box-sizing: border-box;
 }
 
 body {
@@ -18,12 +19,12 @@ body {
 }
 
 #header {
-    grid-row: 1;
-    height: 10vh;
+    grid-row: 0 / 1;
+    /* height: 10vh; */
 }
 
 #footer {
-    grid-row: 3;
+    grid-row: 2 / 3;
     height: 10vh;
 }
 
@@ -41,7 +42,10 @@ body {
     height: 25rem;
     padding: 1rem;
     background-color: white;
-    box-sizing: border-box;
+    position: fixed;
+    /* box-sizing: border-box; */
+    /* position: absolute; */
+    top: 10rem;
     margin: calc(100vh - 50rem) auto;
 }
 
@@ -92,7 +96,7 @@ body {
 }
 
 #form-wrapper {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 #task-buttons {
@@ -104,4 +108,30 @@ body {
     flex: 1;
     justify-content: center;
     gap: 2rem;
+}
+
+#book-db {
+    display: flex;
+    box-sizing: border-box;
+    height: 100%;
+    width: 50vw;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+}
+
+#book-db div {
+  width: 100%;
+  display: flex;
+  /* flex: 1 1 auto; */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rm-book {
+    width: 50%;
+    align-items: flex-end;
+    justify-content: right;
+    font-size: 1.1rem;
 }
