@@ -32,26 +32,36 @@ function addBookToLibrary(event) {
 
   const bookEntry = document.createElement('div');
   bookEntry.className = 'book';
-  bookEntry.textContent = Object.values(event)[0];
-  bookEntry.textContent += ' by ' + Object.values(event)[1];
-  const bookEntryPages = document.createElement('div');
+
+  const bookTitle = document.createElement('div');
+  bookTitle.className = 'title';
+  bookTitle.textContent = Object.values(event)[0];
+
+  const bookAuthor = document.createElement('div');
+  bookAuthor.className = 'author';
+  bookAuthor.textContent += ' by ' + Object.values(event)[1];
+
+  const bookPages = document.createElement('div');
   if ( Object.values(event)[2] > 0 ){
-    bookEntryPages.textContent = ' (' + Object.values(event)[2] + ' pages)';
-    bookEntryPages.className = 'book-pgs';
+    bookPages.textContent = Object.values(event)[2] + ' pages';
+    bookPages.className = 'book-pgs';
   }
-  bookEntry.appendChild(bookEntryPages);
+
   const rmEntry = document.createElement('span');
   rmEntry.className = 'rm-book';
   rmEntry.textContent = 'X';
-  if ( Object.values(event)[3] == 'true' ) {
-    bookEntry.appendChild(rmEntry);
-    bookDBy.appendChild(bookEntry);
-  } else {
-    bookEntry.appendChild(rmEntry);
-    bookDBn.appendChild(bookEntry);
-  }
-  bookDB.setAttribute('class', '');
 
+  bookEntry.appendChild(bookTitle);
+  bookEntry.appendChild(bookAuthor);
+  bookEntry.appendChild(bookPages);
+  bookEntry.appendChild(rmEntry);
+
+  if ( Object.values(event)[3] == 'true' ) {
+    bookDBy.appendChild(bookEntry);
+  } else { bookDBn.appendChild(bookEntry); }
+
+  // Unhide book list
+  bookDB.setAttribute('class', '');
   document.forms[0].reset();
 
   if (myLibrary.length > 0){ enableTaskButtons(); }

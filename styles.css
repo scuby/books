@@ -116,43 +116,66 @@ body {
 
 #book-db {
     display: grid;
-    grid-template: 20px 1fr 20px 1fr / 1fr;
+    grid-template: 20px 1fr / 1fr 1fr;
     box-sizing: border-box;
-    height: 100%;
-    width: 50vw;
+    height: 80%;
+    width: 80vw;
     /* flex-direction: column; */
     justify-content: center;
     /* align-items: center; */
     margin: 2rem auto;
+    column-gap: 2rem;
 }
 
 #book-db-y,
 #book-db-n {
     /* display: grid; */
     overflow-y: auto;
+    grid-row-start: 2;
+    height: 100%;
+}
 
+#book-db-y > :nth-child(2n),
+#book-db-n > :nth-child(2n) {
+    background-color: pink;
+}
+
+#book-db-y {
+    grid-column-start: 1;
+}
+
+#book-db-n {
+    grid-column-start: 2;
 }
 
 #book-db > span {
-    grid-column: 1 / 4;
+    /* grid-column: 1 / 4; */
     font-weight: 900;
     text-align: center;
+    border: 1px solid gray;
+    color: white;
+    background-color: black;
 }
 
 .book {
     display: grid;
-    grid-template: 3rem / 1fr 8rem 3rem;
+    grid-template: 3rem / 2fr 2fr 1fr 2rem;
     max-height: 3rem;
     align-items: center;
+}
+
+.author,
+.book-pgs {
+    text-align: right;
 }
 
 .rm-book {
     text-align: center;
     font-size: 1.1rem;
-    grid-column-start: 3;
+    grid-column-start: 4;
 }
 
 .book-pgs {
-    grid-column-start: 2;
+    grid-column-start: 3;
     color: lightslategray;
 }
